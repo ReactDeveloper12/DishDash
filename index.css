@@ -1,3 +1,70 @@
-#heading {
-    color:red;
+.header { 
+    border: 1px solid black;
+    padding: .5em 1em;
+    background-color: rgb(234, 184, 93);
+  }
+
+.header::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+.logo-container {
+    float: left;
+  }
+
+.logo-container h1 {
+    font-size: 1.5em;
+    margin: .7em 0 .3em 0;
+    display: inline-block;
+  }
+
+.logo-container h1 a{
+    text-decoration: none;
+    color: black;
+    font-family: cursive;
+    font-weight: Bold;
+}
+
+.logo {
+    max-width: 70px;
+    float: left;
+    margin: 0 10px 0 0;
+}
+
+.nav {
+    float: right;
+}
+
+.nav ul,li {
+    margin: 0;
+    padding: 0;
+}
+
+.nav li {
+    display: inline-block;
+    margin: 1.4em 1em 1em 1em;
+}
+
+.res-card {
+    width:220px;
+    background-color: beige;
+    border: 1px solid black;
+    overflow: hidden;
+}
+
+.res-card:hover {
+    cursor: pointer;
+}
+
+.res-logo {
+    align-content: center;
+    width : 100%;
+    height: 60%;
+    object-fit: cover;
+}
+
+.search{
+    margin:10px;
 }
