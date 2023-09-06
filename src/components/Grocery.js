@@ -1,7 +1,7 @@
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { BsWifiOff } from "react-icons/bs";
 
-const About = () => {
+const Grocery = () => {
     const OnlineStatus = useOnlineStatus();
     if(OnlineStatus === false){
         return (
@@ -13,11 +13,9 @@ const About = () => {
     }
     return (
         <div>
-            <h3>We build innovative products & solutions that deliver unparalleled convenience to urban consumers.
-    The best part? Every bit of your work at DishDash will help elevate the lives of our users across India.</h3>
-    <h2>Where Do You Belong?</h2>
-        </div>
-    );
-};
+            <img className="DDMartImg" src="https://cdn3d.iconscout.com/3d/premium/thumb/coming-soon-4485432-3728267.png?f=webp" />
+        </div>     
+    )
+}
 
-export default About
+export default Grocery

@@ -2,11 +2,13 @@ import RestaurantCard from "./RestaurantCard";
 import { useState,useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-import { BsSearch } from "react-icons/bs";
+import { BsSearch,BsWifiOff } from "react-icons/bs";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
     const [listofRestaurants,setlistofRestaurants] = useState([]);
     const [filteredRestaurants,setFilteredRestaurants] = useState([]);
+    const [searchText,setsearchText] = useState("");
     useEffect( () => {
         fetchData();
     },[]);
@@ -20,7 +22,16 @@ const Body = () => {
         setFilteredRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     };
 
-    const [searchText,setsearchText] = useState("");
+    const OnlineStatus = useOnlineStatus();
+    if(OnlineStatus === false){
+        return (
+            <div className="offlineWrapper">
+                <h1 className="offline-text">You Are Offline.<BsWifiOff /></h1>
+                <h4 className="offline-text-small">Please Check Your Internet Connection.</h4>
+            </div>
+        );
+    }
+
 
     //conditional rendering
     if(listofRestaurants?.length === 0) {

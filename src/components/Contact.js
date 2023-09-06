@@ -1,4 +1,16 @@
+import useOnlineStatus from "../utils/useOnlineStatus";
+import { BsWifiOff } from "react-icons/bs";
+
 const Contact = () => {
+    const OnlineStatus = useOnlineStatus();
+    if(OnlineStatus === false){
+        return (
+            <div className="offlineWrapper">
+                <h1 className="offline-text">You Are Offline.<BsWifiOff /></h1>
+                <h4 className="offline-text-small">Please Check Your Internet Connection.</h4>
+            </div>
+        );
+    }
     return (
         <div className="contact_form_inner">
             <div className="contact_field">
